@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Privacy Test Utility</string>
+    <string name="vpn_title">IP Change (WireGuard)</string>
+    <string name="vpn_button_connect">Connect</string>
+    <string name="vpn_button_disconnect">Disconnect</string>
+    <string name="dns_title">DNS Change</string>
+    <string name="location_title">Mock Location Viewer</string>
+    <string name="self_test_button">Run Self-Test</string>
+    <string name="status_placeholder">Status: Waiting...</string>
+</resources>

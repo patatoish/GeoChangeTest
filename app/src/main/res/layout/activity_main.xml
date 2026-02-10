@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:divider="?android:dividerHorizontal"
+        android:showDividers="middle">
+
+        <!-- VPN Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vpn_title"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Enable VPN"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"/>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchVpn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvVpnStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/status_placeholder"
+                android:fontFamily="monospace"
+                android:textSize="12sp"/>
+
+             <Button
+                android:id="@+id/btnImportConfig"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Import Config / Use Mock"
+                android:layout_marginTop="8dp"
+                style="@style/Widget.Material3.Button.OutlinedButton"/>
+
+        </LinearLayout>
+
+        <!-- DNS Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dns_title"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textStyle="bold"/>
+
+            <Spinner
+                android:id="@+id/spinnerDns"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:minHeight="48dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Apply via VPN"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"/>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchDnsVpn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDnsStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/status_placeholder"
+                android:fontFamily="monospace"
+                android:textSize="12sp"/>
+
+        </LinearLayout>
+
+        <!-- Location Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location_title"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enable 'Mock Location' in Developer Options and select this app."
+                android:layout_marginTop="4dp"
+                android:textSize="12sp"
+                android:textColor="?android:textColorSecondary"/>
+
+             <!-- Mock Status Badge -->
+             <TextView
+                android:id="@+id/tvMockProviderStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Not Selected"
+                android:background="#FFCDD2"
+                android:textColor="#B71C1C"
+                android:padding="4dp"
+                android:layout_marginTop="8dp"
+                android:textSize="12sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Mock Location Helper"
+                    android:textAppearance="?attr/textAppearanceBodyLarge"/>
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switchMockLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+                
+                <TableRow>
+                     <TextView android:text="Field" android:textStyle="bold" android:paddingRight="8dp"/>
+                     <TextView android:text="Real" android:textStyle="bold" android:paddingRight="8dp"/>
+                     <TextView android:text="Mock" android:textStyle="bold"/>
+                </TableRow>
+                <TableRow>
+                     <TextView android:text="Lat/Lon"/>
+                     <TextView android:id="@+id/tvRealLatLon" android:text="N/A" android:paddingRight="8dp" android:textSize="12sp"/>
+                     <TextView android:id="@+id/tvMockLatLon" android:text="N/A" android:textSize="12sp"/>
+                </TableRow>
+                 <TableRow>
+                     <TextView android:text="Accuracy"/>
+                     <TextView android:id="@+id/tvRealAcc" android:text="N/A" android:paddingRight="8dp" android:textSize="12sp"/>
+                     <TextView android:id="@+id/tvMockAcc" android:text="N/A" android:textSize="12sp"/>
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
+
+        <!-- Footer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="16dp">
+
+            <Button
+                android:id="@+id/btnSelfTest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/self_test_button"
+                style="@style/Widget.Material3.Button.TonalButton"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Limits: System timezone/SIM country cannot be changed without root."
+                android:textSize="10sp"
+                android:layout_marginTop="8dp"
+                android:gravity="center"/>
+                
+            <TextView
+                android:id="@+id/tvLog"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="#EEE"
+                android:padding="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Log initialized..."
+                android:fontFamily="monospace"
+                android:textSize="10sp"
+                android:scrollbars="vertical"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
